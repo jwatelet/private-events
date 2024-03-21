@@ -22,6 +22,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @enrollment = current_user.enrollments.find_by(event_id: params[:id])
+    @attendees = @event.attendees
   end
 
   private
