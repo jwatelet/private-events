@@ -2,7 +2,13 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
-    @events = Event.all
+    @events = if params[:filter] == "past"
+                Event.past
+              elsif params[:filter] == "future"
+                Event.future
+              else
+                Event.all
+              end
   end
 
   def new
