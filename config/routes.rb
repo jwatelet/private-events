@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "events#index"
 
-  resources :events, only: [:index, :show, :new, :create]
+  resources :events, only: [:index, :show, :new, :create] do
+    resources :enrollments, only: [:create, :destroy]
+  end
 end
