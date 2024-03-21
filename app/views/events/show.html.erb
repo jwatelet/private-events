@@ -1,0 +1,11 @@
+<h2><%= @event.title %></h2>
+
+<p>Creator: <%= @event.creator.email %></p>
+<p><%= @event.date %></p>
+<p><%= @event.description %></p>
+
+<ul>
+  <li>
+    <%= link_to 'Event list', events_path %>
+  </li>
+</ul>
