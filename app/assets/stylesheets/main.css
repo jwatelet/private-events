@@ -157,3 +157,12 @@ main {
   margin-top: 20px;
   border-radius: 20px;
 }
+
+/* devise  */
+
+.devise-card {
+  margin-top: 20px;
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 25px;
+}
