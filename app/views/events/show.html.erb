@@ -1,21 +1,17 @@
-<h2><%= @event.title %></h2>
-
-<p>Creator: <%= @event.creator.email %></p>
-<p><%= @event.date %></p>
-<p><%= @event.description %></p>
-
-<div>
-  <%= enroll_button %>
-</div>
-
-<h3>Attendees</h3>
-<ul>
-  <% @attendees.each do |attendee| %>
-    <li><%= attendee.email %></li>
-  <% end %>
-</ul>
-
-
-<div>
-  <%= link_to 'Event list', events_path %>
+<div class="event-display">
+  <p class= "event-date"><%= @event.date.strftime("%A %d %B %Y")  %></p>
+  <h1><%= @event.title %></h1>
+  
+  <p><%= @event.description %></p>
+  
+  <div class="button">
+    <%= enroll_button %>
+  </div>
+  
+  <h3>Attendees : </h3>
+  <ul>
+    <% @attendees.each do |attendee| %>
+      <li><%= attendee.email %></li>
+    <% end %>
+  </ul>
 </div>

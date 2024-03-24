@@ -1,0 +1,14 @@
+<div class="events">
+  <ul>
+    <% @events.each do |event| %>
+      <li class="event-card">
+        <p class= "event-date"><%= event.date.strftime("%A %d %B %Y")  %></p>
+        <%= link_to event.title, event %>
+        <p class="creator">
+          <span>Created by :</span>
+          <span><%= event.creator.email %></span>
+        </p>
+      </li>
+    <% end %>
+  </ul>
+</div>

@@ -3,11 +3,11 @@ class EventsController < ApplicationController
 
   def index
     @events = if params[:filter] == "past"
-                Event.past
+                Event.joins(:creator).past
               elsif params[:filter] == "future"
-                Event.future
+                Event.joins(:creator).future
               else
-                Event.all
+                Event.joins(:creator).all
               end
   end
 
